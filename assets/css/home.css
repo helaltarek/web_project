@@ -261,7 +261,8 @@ header {
 .car-image img {
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
   display: block;
   transition: filter 0.3s ease;
 }
