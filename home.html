@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMW 3D Models Viewer</title>
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+
+  <!-- Selector موديلات BMW -->
+  <div class="car-selector">
+    <button data-target="e46">BMW E46</button>
+    <button data-target="b340">BMW 340i</button>
+    <button data-target="m5">BMW M5</button>
+  </div>
+
+  <!-- أقسام الموديلات -->
+
+  <section class="car-section" id="e46">
+    <h2>BMW E46</h2>
+    <div class="viewer-box" id="viewer-e46"></div>
+  </section>
+
+  <section class="car-section" id="b340">
+    <h2>BMW 340i</h2>
+    <div class="viewer-box" id="viewer-b340"></div>
+  </section>
+
+  <section class="car-section" id="m5">
+    <h2>BMW M5</h2>
+    <div class="viewer-box" id="viewer-m5"></div>
+  </section>
+
+  <!-- مكتبات Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- سكريبت الصفحة -->
+  <script src="assets/js/home.js"></script>
+
+</body>
+</html>
