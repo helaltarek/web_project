@@ -124,6 +124,65 @@
   <!-- <div class="viewer-box" id="viewer-m5"></div> -->
   </section>
 
+  <!-- قسم Testimonials -->
+  <section class="testimonials-section">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"The BMW E46 M3 exceeded all my expectations. The performance is incredible and the design is timeless."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Ahmed Hassan</span>
+            <span class="author-title">Car Enthusiast</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Driving the BMW 340i is pure luxury. The turbo engine delivers power without compromising comfort."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Sara Mohamed</span>
+            <span class="author-title">Business Executive</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"The BMW M5 Competition is a beast on the road. Unmatched performance and handling."</p>
+          <div class="testimonial-author">
+            <span class="author-name">Mohamed Ali</span>
+            <span class="author-title">Racing Driver</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/images/bmw-logo.png" alt="BMW Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/BMW" target="_blank" class="social-link">Facebook</a>
+          <a href="https://www.instagram.com/bmw" target="_blank" class="social-link">Instagram</a>
+          <a href="https://twitter.com/BMW" target="_blank" class="social-link">Twitter</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: info@bmw-egypt.com</p>
+        <p>Phone: +20 123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 BMW Egypt. All rights reserved.</p>
+    </div>
+  </footer>
+
   <!-- سكريبت الصفحة -->
   <script>
     // تغيير لون الزر النشط + عمل scroll للجزء المطلوب
@@ -141,6 +200,17 @@
         const targetId = btn.dataset.target;
         const targetSection = document.getElementById(targetId);
         targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // أنيميشن للصور عند التحميل
+    window.addEventListener('load', () => {
+      const carImages = document.querySelectorAll('.car-image');
+      carImages.forEach((image, index) => {
+        setTimeout(() => {
+          image.style.opacity = '1';
+          image.style.transform = 'translateY(0)';
+        }, index * 200);
       });
     });
   </script>

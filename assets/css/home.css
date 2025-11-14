@@ -383,6 +383,165 @@ header {
 
 
 
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #42a5ff;
+  text-shadow: 0 0 20px rgba(66, 165, 255, 0.5);
+  animation: fadeInUp 1s ease-out;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  transition: all 0.3s ease;
+  animation: slideInFromBottom 1s ease-out both;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(66, 165, 255, 0.3);
+}
+
+.testimonial-content p {
+  color: #e0e0e0;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.author-name {
+  color: #42a5ff;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.author-title {
+  color: #a0a0a0;
+  font-size: 0.9em;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  padding: 50px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 50px;
+  filter: brightness(0.8);
+}
+
+.footer-links,
+.footer-contact {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  color: #42a5ff;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #42a5ff;
+}
+
+.footer-contact p {
+  color: #a0a0a0;
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #a0a0a0;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Enhanced Animations */
+.car-image {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.car-image.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .bmw-icon {
@@ -452,5 +611,26 @@ header {
     font-size: 0.8em;
   }
 
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .testimonial-card {
+    min-width: 280px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    height: 40px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
