@@ -12,6 +12,41 @@ body {
   overflow-x: hidden;
 }
 
+/* BMW Icon */
+.bmw-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1002;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(66, 165, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(66, 165, 255, 0.5);
+  border-color: #42a5ff;
+}
+
+.icon-circle img {
+  width: 35px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(0);
+}
+
 /* Header */
 header {
   position: fixed;
@@ -215,26 +250,12 @@ header {
   transition: all 0.4s ease;
   position: relative;
   animation: slideInFromBottom 1s ease-out 0.6s both;
+  cursor: pointer;
 }
 
 .car-image:hover {
   transform: scale(1.03) translateY(-5px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-}
-
-.car-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.car-image:hover::before {
-  left: 100%;
 }
 
 .car-image img {
@@ -247,6 +268,99 @@ header {
 
 .car-image:hover img {
   filter: brightness(1.1) contrast(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+
+.car-image:hover .image-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.car-info {
+  color: white;
+  text-align: center;
+  max-width: 90%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.car-info h3 {
+  margin-bottom: 15px;
+  color: #42a5ff;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px rgba(66, 165, 255, 0.5);
+}
+
+.car-info .car-specs {
+  margin-bottom: 15px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+.car-info .spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9em;
+}
+
+.car-info .spec-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.car-info .spec-label {
+  color: #42a5ff;
+  font-weight: bold;
+}
+
+.car-info .spec-value {
+  color: white;
+}
+
+.car-info p {
+  color: #e0e0e0;
+  line-height: 1.4;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slideInFromTop {
@@ -288,6 +402,20 @@ header {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .bmw-icon {
+    top: 10px;
+    right: 10px;
+  }
+
+  .icon-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-circle img {
+    width: 28px;
+  }
+
   .header-content {
     flex-direction: column;
     gap: 10px;
@@ -320,24 +448,25 @@ header {
     font-size: 2em;
   }
 
-  .car-details {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .car-specs,
-  .car-description {
-    padding: 20px;
-  }
-
-  .spec-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
   .car-image img {
     max-width: 100%;
+  }
+
+  .car-info {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .car-info h3 {
+    font-size: 1.2em;
+  }
+
+  .car-info .spec-item {
+    font-size: 0.8em;
+  }
+
+  .car-info p {
+    font-size: 0.8em;
   }
 
   .viewer-box {
