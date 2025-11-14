@@ -1,4 +1,4 @@
 setTimeout(() => {
-    window.location.href = "home.html";
-}, 4000); 
+    window.location.href = "login.html";
+}, 4000);
  

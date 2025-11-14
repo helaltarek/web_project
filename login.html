@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BMW Login</title>
+  <link rel="stylesheet" href="assets/css/login.css" />
+</head>
+<body>
+
+  <!-- نموذج تسجيل الدخول -->
+  <div class="login-container">
+    <div class="login-form">
+      <img src="assets/images/bmw-logo.png" alt="BMW Logo" class="login-logo">
+      <h2>تسجيل الدخول</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">اسم المستخدم</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">كلمة المرور</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="login-btn">دخول</button>
+      </form>
+      <p class="error-message" id="errorMessage"></p>
+    </div>
+  </div>
+
+  <!-- سكريبت الصفحة -->
+  <script src="assets/js/login.js"></script>
+
+</body>
+</html>

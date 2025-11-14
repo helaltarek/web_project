@@ -8,21 +8,14 @@
 </head>
 <body>
 
-  <!-- BMW Icon -->
-  <div class="bmw-icon">
-    <div class="icon-circle">
-      <img src="assets/images/bmw-logo.png" alt="BMW Icon">
-    </div>
-  </div>
+ 
 
   <!-- Header with BMW Logo and Tagline -->
   <header>
-    <div class="header-content">
-      <img src="assets/images/bmw-logo.png" alt="BMW Logo" class="header-logo">
-      <div class="header-tagline">
-        <span class="tagline-text">Experience the Legend</span>
-        <div class="animated-line"></div>
-      </div>
+    <img src="assets/images/bmw-logo.png" alt="BMW Logo" class="header-logo">
+    <div class="header-tagline">
+      <span class="tagline-text">Experience the Legend</span>
+      <div class="animated-line"></div>
     </div>
   </header>
 
@@ -64,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="viewer-box" id="viewer-e46"></div>
+    <!-- <div class="viewer-box" id="viewer-e46"></div> -->
   </section>
 
   <section class="car-section" id="b340">
@@ -96,7 +89,7 @@
         </div>
       </div>
     </div>
-    <div class="viewer-box" id="viewer-b340"></div>
+    <!-- <div class="viewer-box" id="viewer-b340"></div> -->
   </section>
 
   <section class="car-section" id="m5">
@@ -128,15 +121,29 @@
         </div>
       </div>
     </div>
-    <div class="viewer-box" id="viewer-m5"></div>
+  <!-- <div class="viewer-box" id="viewer-m5"></div> -->
   </section>
 
-  <!-- مكتبات Three.js -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
-
   <!-- سكريبت الصفحة -->
-  <script src="assets/js/home.js"></script>
+  <script>
+    // تغيير لون الزر النشط + عمل scroll للجزء المطلوب
+    const buttons = document.querySelectorAll('.car-selector button');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // إزالة الكلاس active من الكل
+        buttons.forEach(b => b.classList.remove('active'));
+
+        // إضافة الكلاس active للزر اللي اضغط عليه
+        btn.classList.add('active');
+
+        // عمل scroll للجزء المطلوب
+        const targetId = btn.dataset.target;
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 
 </body>
 </html>
